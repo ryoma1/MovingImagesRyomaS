@@ -1,3 +1,4 @@
+
 -- Title: MovingImages
 -- Name: Your Name
 -- Course: ICS2O/3C
@@ -19,10 +20,10 @@ local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536
 local beetleship = display.newImageRect("Images/beetleship.png", 200, 200)
 
 --set the image to be transparent
-
+beetleship.alpha = 0
 
 --set the initial x and y position of the beetleship
-beetleship.x = 100
+beetleship.x = 0
 beetleship.y = display.contentHeight/3
 
 --Function: MoveShip
@@ -33,8 +34,9 @@ local function MoveShip(event)
 	  --add the scroll speed to the x-value of the ship
 	  beetleship.x = beetleship.x + scrollSpeed
 	  -- change the transparency of the ship every time it moves so that it fades out
-	  beetleship.alpha = beetleship.alpha + 0.01
+	  beetleship.alpha = beetleship.alpha + 0.1
 	end
 
     -- MoveShip will be called over and over again
     Runtime:addEventListener("eventFrame", MoveShip)
+
