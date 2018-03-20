@@ -95,3 +95,8 @@ end
 -- MoveKim will be called over and over again
 Runtime:addEventListener("enterFrame", MoveKim)
 
+--add sounds
+
+local correctSound = audio.loadSound("Sounds/epic.mp3")
+local correctSoundChannel
+correctSoundChannel = audio.play(correctSound)
